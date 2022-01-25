@@ -1,0 +1,1 @@
+integers.py contains method even_or_odd which has an argument of a list of integers and determines whether each integer is even or odd. 
