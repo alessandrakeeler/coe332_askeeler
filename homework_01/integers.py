@@ -1,4 +1,3 @@
-
 def even_or_odd(int_list):
     for i in int_list:
         if i%2 == 0:
