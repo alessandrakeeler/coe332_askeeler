@@ -1,5 +1,5 @@
 # Homework #2, COE 332 
-### Investigating the distance/time traveled by the mars rover between different collection sites.
+### Investigating the distance/time traveled by the mars rover between different collection sites. Taking into account the collection time for different types of sites as well as the radius of mars when calculating the total travel distance/time.
 
 #### How to use this folder.
 
