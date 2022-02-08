@@ -1,7 +1,7 @@
-#Homework #2, COE 332 
-###Investigating the distance/time traveled by the mars rover between different collection sites.
+# Homework #2, COE 332 
+### Investigating the distance/time traveled by the mars rover between different collection sites.
 
-####How to use this folder.
+#### How to use this folder.
 
 - random_generator.py
   - This file generates a random dictionary with arguments latitude (range 16.0-18.0), longitude (range 82.0-84.0), and composition (stony, iron, or stony iron)
