@@ -20,6 +20,11 @@ def get_average_values(start_date: str, water_dictionary: dict):
 
     lst = water_dictionary['turbidity_data']
     start_index = next((index for (index, d) in enumerate(lst) if d["datetime"] == start_date), None)
+    if start_index < 5:
+        start_date = input(
+            f"That date is too early in sampling, and there are not enough data points prior to make a calculation, "
+            f"please enter a new time at least {5 - start_index} hours later: ")
+        start_index = next((index for (index, d) in enumerate(lst) if d["datetime"] == start_date), None)
 
     average_volume = mean([x['sample_volume'] for ind, x in enumerate(lst) if start_index + 1 > ind > start_index - 5])
     average_calibration_constant = mean(
@@ -41,7 +46,7 @@ def get_turbidity(calibration_constant: float, detector: float) -> float:
     return calibration_constant * detector
 
 
-def check_potability(calibration_constant, detector) -> bool:
+def check_potability(calibration_constant: float, detector: float) -> bool:
     """This function utilizes the get_turbidity function to determine whether or not the water is potable
 
     Expects an input of the average calibration constant, detector constant, and returns whether or not the water is potable (bool)
@@ -65,7 +70,7 @@ def minimum_time(calibration_constant, detector) -> float:
     :return: float
     """
 
-    t = calibration_constant * detector
+    t = get_turbidity(calibration_constant, detector)
     b = math.log((1 / t), 0.98)
     return b
 
@@ -82,14 +87,14 @@ def output_string(data, date):
 
     volume, calibration, detector = get_average_values(date, data)
     turbidity = get_turbidity(calibration, detector)
-    print(f"For date: {date} \n")
+    print(f"From date: {date} ")
     if check_potability(calibration, detector):
         print(f" Average turbidity based on most recent five measurements: {turbidity} ntu")
         logging.info(" Turbidity is below threshold for safe use. ")
         print("Minimum time required to return below a safe threshold = 0 hours")
 
     else:
-        print(f" Average turbidity based on most recent five measurements: {turbidity} ntu")
+        print(f"Average turbidity based on most recent five measurements: {turbidity} ntu")
         logging.warning("Turbidity is above threshold for safe use")
         print(f"Minimum time required to return below a safe threshold = {minimum_time(calibration, detector)} hours ")
 
