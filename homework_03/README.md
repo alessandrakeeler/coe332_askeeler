@@ -15,10 +15,10 @@ The function then averages the most recent 5 datapoints, starting from that date
     get_turbidity(calibration_constant, detector) -> float
 This function calculates the turbidity of the water sample, from the average calculated values of calibration_constant and detector. It is used by check_potability to determine where a sample is drinkable or not. 
 
-    `minimum_time(calbration_constant, detector) -> float`
+    minimum_time(calbration_constant, detector) -> float
 This function determines the minimum time the water sample needs to return to a drinkable turbidity level again. 
 
-    `output_string(data, date)`
+    output_string(data, date)
 This function is where all the magic happens. It accepts the start date and the dictionary of data, then runs all other functions and formats output strings for easy readibilty of results. 
 ### Using this repository 
 All functions must be run from the directory level homework_03
