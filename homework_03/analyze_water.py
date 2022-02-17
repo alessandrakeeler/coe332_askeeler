@@ -85,15 +85,13 @@ def output_string(data, date):
     print(f"For date: {date} \n")
     if check_potability(calibration, detector):
         print(f" Average turbidity based on most recent five measurements: {turbidity} ntu")
-        print()
-        print("Info: Turbidity is below threshold for safe use \n Minimum time required to return below a safe "
-              "threshold = 0 hours")
+        logging.info(" Turbidity is below threshold for safe use. ")
+        print("Minimum time required to return below a safe threshold = 0 hours")
 
     else:
         print(f" Average turbidity based on most recent five measurements: {turbidity} ntu")
-        print(f"Warning: Turbidity is above threshold for safe use \n Minimum time required to return below a safe "
-              f"threshold = {minimum_time(calibration, detector)} hours "
-              )
+        logging.warning("Turbidity is above threshold for safe use")
+        print(f"Minimum time required to return below a safe threshold = {minimum_time(calibration, detector)} hours ")
 
 
 def main():
