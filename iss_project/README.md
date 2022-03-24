@@ -77,10 +77,6 @@ Sample input:
 curl localhost:5000/COUNTRY/United_States/regions/Oregon/cities/Burns
 ```
 
-Sample input: 
-```
-curl localhost:5000/COUNTRY/United_States/regions/Oregon/cities/Burns
-```
 
 Truncated sample output:
 
