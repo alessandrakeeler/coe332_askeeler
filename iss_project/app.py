@@ -9,7 +9,7 @@ epoch_data = {}
 sighting_data = {}
 
 @app.route('/read_data', methods=['POST'])
-def read_data_from_file_into_dict():
+def read_data_to_dict():
     """
     This route reads two XML data files and confirms they have been read.
     """
@@ -72,7 +72,7 @@ def get_epoch_data(epoch: str):
     Returns:
     epoch_dict (dictionary): All information about the specified epoch (positional and velocity)
     """
-    logging.info(f"Gettting {epoch} information")
+    logging.info(f"Gettting {epoch}")
     epoch_index = 0
     i = 0
     while(epoch != epoch_data['ndm']['oem']['body']['segment']['data']['stateVector'][i]['EPOCH']):
