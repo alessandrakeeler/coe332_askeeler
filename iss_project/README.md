@@ -4,6 +4,11 @@
 There is a plethora of data that comes from the ISS, and this project wrangles the data given in difficult, if not impossible, to read XML files into a queryable Flask app. This app allows for the user to search for sightings of the ISS at certain epochs, and then when it's above certain countries, regions, and cities!
 
 
+## Relevent Files 
+app.py is the main file for the flask app, this is where all the routes are written 
+test_app.py is the testing file for app.py, these tests make sure the types returned are correct
+Makefile is the the makefile for the Docker images
+Dockerfile is the docker container file for this project
 
 
 ## Data Download
