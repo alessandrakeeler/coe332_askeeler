@@ -10,7 +10,8 @@
 
 ### Steps to run. 
 1. ```docker run -d -p 6379:6379 -v $(pwd)/data:/data:rw --name=<DockerUsername>-redis redis:6 save 1 1```
-2. ```export FLASK_APP=app.py
+2. ```
+    export FLASK_APP=app.py
     export FLASK_ENV=development
     flask run -p 5000```
 
