@@ -11,6 +11,34 @@ This project utilizes Kubernetes to deploy a Flask API that uses Redis to create
 - askeeler-test-flask-service.yml: provides an IP address to interact with Redis 
 
 ### Getting the data for the application 
-In the root directory of HOMEWORK_06, run the following command:
+** In the root directory of HOMEWORK_06, run the following command: ** 
 
 ``` $ wget https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json ```
+
+
+### Kubernetes deployment 
+** Steps to deploying the application on Kubernetes **
+
+Run the following commands to log in to the kubernetes cluster
+
+``` $ ssh <tacc_username>@coe332-k8s.tacc.cloud ```
+
+Next, repeat the following command for each of the 5 .yml files 
+
+``` [user@f5p ~]$ kubectl apply -f <file name> ```
+
+To find the IP adress of the flask service, run 
+
+``` [user@f5p ~]$ kubectl get services ```
+
+Execute a command in the Python debug pod by running 
+``` [user@f5p ~]$ kubectl exec -it <python-debug-NAME> /bin/bash ```
+
+Now you're in the Python pod!
+
+To run the services, use the IP adress gotten above and run 
+``` curl <IP_Address>:5000/data -X POST ```
+then you can run 
+``` curl <IP_Address>:5000/data?start=299 -X GET ``` 
+
+
