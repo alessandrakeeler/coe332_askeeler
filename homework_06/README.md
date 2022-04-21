@@ -32,13 +32,33 @@ To find the IP adress of the flask service, run
 ``` [user@f5p ~]$ kubectl get services ```
 
 Execute a command in the Python debug pod by running 
+
 ``` [user@f5p ~]$ kubectl exec -it <python-debug-NAME> /bin/bash ```
 
 Now you're in the Python pod!
 
 To run the services, use the IP adress gotten above and run 
+
 ``` curl <IP_Address>:5000/data -X POST ```
+
 then you can run 
+
 ``` curl <IP_Address>:5000/data?start=299 -X GET ``` 
 
 
+Sample output: 
+ 
+ ```
+       [
+       {
+        "name": "Jennifer",
+        "id": "10299",
+        "recclass": "L5",
+        "mass (g)": "539",
+        "reclat": "-84.0579",
+        "reclong": "69.9994",
+        "GeoLocation": "(-84.0579, 69.9994)"
+       }
+       ]
+
+      ```
