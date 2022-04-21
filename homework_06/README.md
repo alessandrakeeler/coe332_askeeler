@@ -10,3 +10,7 @@ This project utilizes Kubernetes to deploy a Flask API that uses Redis to create
 - askeeler-test-flask-deployment.yml: creates a deployment for the Flask API
 - askeeler-test-flask-service.yml: provides an IP address to interact with Redis 
 
+### Getting the data for the application 
+In the root directory of HOMEWORK_06, run the following command:
+``` $ wget https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json
+```
