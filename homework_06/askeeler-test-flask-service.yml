@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: askeeler-test-flask-service
+  labels:
+    username: askeeler
+    env: test
+spec:
+  type: ClusterIP
+  selector:
+    app: askeeler-test-flask-service
+  ports:
+  - name: hw6-test
+    port: 5000
+    targetPort: 5000

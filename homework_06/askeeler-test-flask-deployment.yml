@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: askeeler-flask-deployment
+  labels:
+    app: askeeler-test-flask
+    env: test
+    username: askeeler
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: askeeler-test-flask
+  template:
+    metadata:
+      labels:
+        app: askeeler-test-flask
+        env: test
+        username: askeeler
+    spec:
+      containers:
+        - name: askeeler-test-flask
+          imagePullPolicy: Always
+          image: askeeler/hw6-kube:0.1
+          command: ['python3', 'app.py']
+          ports:
+          - name: http
+            containerPort: 5000
