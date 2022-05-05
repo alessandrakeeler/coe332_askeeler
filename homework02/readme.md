@@ -1,4 +1,4 @@
-# Homework #2, COE 332 
+# Homework #2, The Roving Rover 
 ### Investigating the distance/time traveled by the mars rover between different collection sites. Taking into account the collection time for different types of sites as well as the radius of mars when calculating the total travel distance/time.
 
 #### How to use this folder.
