@@ -3,7 +3,9 @@ Exploring the potability of water by calculating the turbidity of hourly samples
 
 ### Getting started! 
 1. Download the turbidity data from [this link](https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json)
-2. Place it in the */homework_03* folder, and name it turbidity_data.json 
+     Or by running 
+     ``` wget https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json ``` in the homework_03 directory 
+3. Place it in the */homework_03* folder, and name it turbidity_data.json 
 
 ### Functions
 
