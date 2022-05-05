@@ -1,4 +1,4 @@
-## Homework 3
+## Homework 3. WAIT don't drink that!!! Or do? Let me check! 
 Exploring the potability of water by calculating the turbidity of hourly samples. 
 
 ### Getting started! 
